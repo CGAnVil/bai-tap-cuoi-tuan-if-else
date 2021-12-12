@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<input type="text" id="soA" placeholder="Nhập số a">
+<button onclick="doMath()">Tính</button>
+<p id="chuvi"></p>
+<p id="dientich"></p>
+<script>
+    function doMath() {
+        let a = parseInt(document.getElementById('soA').value)
+        let p = a*4
+        let s = a*a
+        document.getElementById('chuvi').innerHTML = p
+        document.getElementById('dientich').innerHTML = s
+    }
+</script>
+</body>
+</html>

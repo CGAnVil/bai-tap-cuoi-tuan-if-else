@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<input type="text" id="a" placeholder="nhập cạnh a:">
+<input type="text" id="b" placeholder="nhập cạnh b:">
+<input type="text" id="c" placeholder="nhập cạnh c:">
+<button onclick="check()">Xét tam giác</button>
+<p id="result"></p>
+
+<script>
+    function check() {
+        let a = parseInt(document.getElementById('a').value);
+        let b = parseInt(document.getElementById('b').value);
+        let c = parseInt(document.getElementById('c').value);
+        if (a + b > c && a + c > b && b + c > a) {
+            document.getElementById('result').innerHTML = 'Đây là tam giác thường'
+            if ((a == b) || (a == c) || (b == c)) {
+                if ((a == b) && (b == c)) {
+                    document.getElementById('result').innerHTML = 'Đây là tam giác đều'
+                } else document.getElementById('result').innerHTML = 'Đây là tam giác cân'
+            } else if (Math.pow(a, 2) == Math.pow(b, 2) + Math.pow(c, 2)
+                || Math.pow(b, 2) == Math.pow(a, 2) + Math.pow(c, 2)
+                || Math.pow(c, 2) == Math.pow(a, 2) + Math.pow(b, 2)) {
+                document.getElementById('result').innerHTML = 'Đây là tam giác vuông'
+            } else document.getElementById('result').innerHTML = 'Đây là tam giác thường'
+
+        } else {
+            document.getElementById('result').innerHTML = 'Đây không phải ba cạnh một tam giác'
+        }
+    }
+
+</script>
+</body>
+</html>
